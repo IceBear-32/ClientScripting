@@ -1,0 +1,10 @@
+^C:\USERS\ICE BEAR\DESKTOP\LANG\SCRIPTING\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Dev-Cpp\MinGW64\bin\cmake.exe" "-SC:/Users/Ice Bear/Desktop/lang/Scripting" "-BC:/Users/Ice Bear/Desktop/lang/Scripting/build" --check-stamp-file "C:/Users/Ice Bear/Desktop/lang/Scripting/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

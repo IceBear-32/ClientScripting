@@ -1,0 +1,12 @@
+#pragma once
+
+enum TokenState {
+    NUL_STATE,
+    EOF_STATE,
+    OPERATOR_STATE,
+    NAME_STATE,
+    STRING_STATE,
+    NUMBER_STATE,
+    PUNCTUATOR_STATE,
+    COMMENT_STATE
+};
