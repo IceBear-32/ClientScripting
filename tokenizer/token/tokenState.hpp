@@ -8,5 +8,6 @@ enum TokenState {
     STRING_STATE,
     NUMBER_STATE,
     PUNCTUATOR_STATE,
-    COMMENT_STATE
+    COMMENT_STATE,
+    ESC_SEQ_STATE
 };

@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\main.cpp">
+    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\tokenizer\tokenizer.cpp">
+    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\tokenizer\tokenizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\utils\utils.cpp">
+    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\utils\utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\tokenizer\parser\parser.cpp">
+    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\tokenizer\parser\parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\interpreter\visitor.cpp">
+    <ClCompile Include="C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\interpreter\visitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Ice Bear\Desktop\lang\Scripting\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{44115C75-19E9-3653-9812-A4E63E531111}</UniqueIdentifier>
+      <UniqueIdentifier>{DFAD43BB-FB86-3C9B-B4A8-926A9559F6F6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
-^C:\USERS\ICE BEAR\DESKTOP\LANG\SCRIPTING\BUILD\CMAKEFILES\9890D08845DECC63FFF0BC68C6FDC52E\GENERATE.STAMP.RULE
+^C:\USERS\ICE BEAR\DESKTOP\LANG\SCRIPTING\SCRIPTING\BUILD\CMAKEFILES\2BC02A612D7E034FF73FC9FFB0F864B3\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files (x86)\Dev-Cpp\MinGW64\bin\cmake.exe" "-SC:/Users/Ice Bear/Desktop/lang/Scripting" "-BC:/Users/Ice Bear/Desktop/lang/Scripting/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/Ice Bear/Desktop/lang/Scripting/build/MyProject.sln"
+"C:\Program Files (x86)\Dev-Cpp\MinGW64\bin\cmake.exe" "-SC:/Users/Ice Bear/Desktop/lang/Scripting/Scripting" "-BC:/Users/Ice Bear/Desktop/lang/Scripting/Scripting/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/Ice Bear/Desktop/lang/Scripting/Scripting/build/MyProject.sln"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

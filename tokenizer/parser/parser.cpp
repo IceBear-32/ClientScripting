@@ -47,8 +47,7 @@ ASTNode* Parser::parseAtom() {
             LitTok.Value = tok.Value.substr(1, tok.Value.size()-2);
         }
         else {
-            auto np = std::string::npos;
-            if (tok.Value.find('.') != np) {
+            if (tok.Value.find('.') != std::string::npos) {
                 LitTok.Type = FLOAT;
                 LitTok.Value = tok.Value;
             }
@@ -60,7 +59,35 @@ ASTNode* Parser::parseAtom() {
         LitNode->Literal = LitTok;
         return LitNode;
     }
+    if (tok.Type == KEYWORD) {
+        if (getKeyWord(tok.Value) == IF) {
+            return parseConditionalStatements();
+        }
+    }
     return nullptr;
+}
+
+ConditionNode* Parser::parseConditionalStatements() {
+    auto tok = getCurTok();
+    if (tok.Type == KEYWORD && getKeyWord(tok.Value) == IF) {
+        ConditionNode* ifelse = new ConditionNode();
+        this->next();
+        if(getPunctuator(getCurTok().Value) != LPAR) {
+            delete ifelse;
+            return nullptr;
+        }
+        ifelse->Condition = parseExpr();
+        if(getPunctuator(getCurTok().Value) == LCUR) ifelse->TrueBlock = parseBlock();
+        else ifelse->TrueBlock = parseExpr();
+        if (getKeyWord(getCurTok().Value) == ELSE) {
+            this->next();
+            if (getPunctuator(getCurTok().Value) == LCUR) ifelse->FalseBlock = parseBlock();
+            else ifelse->FalseBlock = parseExpr();
+        }
+        else ifelse->FalseBlock = new ASTNode();
+        return ifelse;
+    }
+    else return nullptr;
 }
 
 ASTNode* Parser::parseExpo() {
@@ -210,6 +237,26 @@ ASTNode* Parser::parseVarDec() {
     return vdNode;
 }
 
+EventNode* Parser::parseEventReg() {
+    this->next();
+    auto tok = getCurTok();
+    if(tok.Type != IDENTIFIER) return nullptr;
+    this->next();
+    if (getPunctuator(getCurTok().Value) != LCUR) return nullptr;
+    EventNode* evNode = new EventNode();
+    IdNode* id = new IdNode();
+    id->Name = tok.Value;
+    evNode->EventID = id;
+    evNode->EventBlock = parseBlock();
+    return evNode;
+}
+
+BlockNode* Parser::parseBlock() {
+    auto tok = getCurTok();
+    if(tok.Type != PUNCTUATOR && getPunctuator(tok.Value) != LCUR) return nullptr;
+    // TODO
+}
+
 std::vector<ASTNode*> Parser::getAST() {
     return this->AST;
 }
@@ -217,8 +264,19 @@ std::vector<ASTNode*> Parser::getAST() {
 Parser& Parser::parse() {
     while (getCurTok().Type != EOFILE) {
         auto tok = getCurTok();
-        if (tok.Type == OPERATOR && getOperator(tok.Value) == VAR) {
-            this->AST.push_back(parseVarDec());
+        if (tok.Type == OPERATOR) {
+            Operator curOp = getOperator(tok.Value);
+            if(curOp == VAR){
+                this->AST.push_back(parseVarDec());
+                continue;
+            }
+            else if (curOp == AT) {
+                this->AST.push_back(parseEventReg());
+                continue;
+            }
+        }
+        else {
+            this->AST.push_back(parseExpr());
             continue;
         }
     }

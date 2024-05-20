@@ -4,6 +4,7 @@
 #include "../token/token.hpp"
 
 enum NodeType {
+    DEFAULT,
     VAR_DEC,
     VAR_REASSIGN,
     VAR_ACCESS,
@@ -20,7 +21,7 @@ enum NodeType {
 
 class ASTNode {
 public:    
-    NodeType Type;
+    NodeType Type = DEFAULT;
     virtual ~ASTNode() {};
 };
 
@@ -80,4 +81,11 @@ public:
     ASTNode* Condition;
     ASTNode* TrueBlock;
     ASTNode* FalseBlock;
+};
+
+class EventNode : public ASTNode {
+public:
+    EventNode() {this->Type = EVENT_DEF;}
+    IdNode* EventID;
+    BlockNode* EventBlock;
 };

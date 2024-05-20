@@ -96,7 +96,7 @@ Tokenizer& Tokenizer::tokenize() {
             // if the state is in string state and the character is ", it checks if the last character is backslash
             // so that it knows it should not mistake \" as string close
             // and then it pushes the value between the "'s and pushes a " and resets the ltoken and the token state to continue with new token
-            if (c == '"' && ltoken.back() != '\\') {
+            if (c == '"') {
                 Tok.Value = ltoken + c;
                 Tok.Type = getTokenType(ltoken+c, state);
                 this->tokens.push_back(Tok);
@@ -105,10 +105,31 @@ Tokenizer& Tokenizer::tokenize() {
             }
             // if it is not " append the character to ltoken
             else {
+                if (c == '\\') {
+                    this->state = ESC_SEQ_STATE;
+                    continue;
+                }
                 this->ltoken += c;
             }
             // continue this iteration and check the next iteration to prevent malfunction
             continue;
+        }
+        if (this->state == ESC_SEQ_STATE) {
+            if (c == '\\') this->ltoken.push_back('\\');
+            else if (c == 'n') this->ltoken.push_back('\n');
+            else if (c == 'r') this->ltoken.push_back('\r');
+            else if (c == 't') this->ltoken.push_back('\t');
+            else if (c == 'v') this->ltoken.push_back('\v');
+            else if (c == '"') this->ltoken.push_back('"');
+            else if (c == 'b') this->ltoken.push_back('\b');
+            else if (c == 'f') this->ltoken.push_back('\f');
+            else if (c == 'a') this->ltoken.push_back('\a');
+            else if (c == '0') this->ltoken.push_back('\0');
+            else {
+                this->ltoken.push_back('\\');
+                this->ltoken.push_back(c);
+            }
+            this->state = STRING_STATE;
         }
         // if the token is in operator state, then continue gathering the trailing operators
         if (this->state == OPERATOR_STATE) {

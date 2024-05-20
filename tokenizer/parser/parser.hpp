@@ -17,7 +17,10 @@ private:
     ASTNode* parseFac();
     ASTNode* parseExpo();
     ASTNode* parseAtom();
+    ConditionNode* parseConditionalStatements();
+    BlockNode* parseBlock();
     ASTNode* parseVarDec();
+    EventNode* parseEventReg();
     void next();
     void back();
 public:

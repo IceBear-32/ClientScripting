@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\Ice Bear\Desktop\lang\Scripting\build\x64\Release\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\build\x64\Release\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\Ice Bear\Desktop\lang\Scripting\build\Release\main.exe</FullPath>
+      <FullPath>C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\build\Release\main.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

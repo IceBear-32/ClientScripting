@@ -1,5 +1,5 @@
-C:\Users\Ice Bear\Desktop\lang\Scripting\main.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\build\main.dir\Release\main.obj
-C:\Users\Ice Bear\Desktop\lang\Scripting\tokenizer\tokenizer.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\build\main.dir\Release\tokenizer.obj
-C:\Users\Ice Bear\Desktop\lang\Scripting\utils\utils.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\build\main.dir\Release\utils.obj
-C:\Users\Ice Bear\Desktop\lang\Scripting\tokenizer\parser\parser.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\build\main.dir\Release\parser.obj
-C:\Users\Ice Bear\Desktop\lang\Scripting\interpreter\visitor.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\build\main.dir\Release\visitor.obj
+C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\main.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\build\main.dir\Release\main.obj
+C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\tokenizer\tokenizer.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\build\main.dir\Release\tokenizer.obj
+C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\utils\utils.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\build\main.dir\Release\utils.obj
+C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\tokenizer\parser\parser.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\build\main.dir\Release\parser.obj
+C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\interpreter\visitor.cpp;C:\Users\Ice Bear\Desktop\lang\Scripting\Scripting\build\main.dir\Release\visitor.obj

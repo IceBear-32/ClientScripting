@@ -40,35 +40,22 @@ public:
             int a_sign = A[0].at(0) == '-' ? -1 : 1;
             int b_sign = B[0].at(0) == '-' ? -1 : 1;
 
-            int Afrac = std::stoi(A[1].size() > 6 ? A[1].substr(0, 7) : A[1]);
-            int Bfrac = std::stoi(B[1].size() > 6 ? B[1].substr(0, 7) : B[1]);
-
-            int AfracSize = std::to_string(Afrac).size();
-            int BfracSize = std::to_string(Bfrac).size();
+            double Afrac = std::stod("0."+(A[1].size() > 6 ? A[1].substr(0, 7) : A[1]));
+            double Bfrac = std::stod("0."+(B[1].size() > 6 ? B[1].substr(0, 7) : B[1]));
 
             long long integerPart;
             
             if (!long_long_addition_overflow(Aint, Bint)) integerPart = Aint + Bint;
             else return (a_sign == -1 && b_sign == -1) ? "-INF" : "INF";
-            
-            int maxFracSize = std::max({AfracSize, BfracSize});
-            if (AfracSize < maxFracSize) Afrac *= std::pow(10, maxFracSize-AfracSize);
-            if (BfracSize < maxFracSize) Bfrac *= std::pow(10, maxFracSize-BfracSize);
 
-            long long fracPartLL = Afrac*a_sign + Bfrac*b_sign;
-
-            int prec = std::pow(10, maxFracSize);
+            double fracPartLL = Afrac*a_sign + Bfrac*b_sign;
             
-            if(!long_long_addition_overflow(integerPart, fracPartLL / prec)) integerPart += fracPartLL / prec;
+            if(!long_long_addition_overflow(integerPart, (int)fracPartLL)) integerPart += (int)fracPartLL;
             else return integerPart > 0 ? "INF" : "-INF";
+            
+            fracPartLL -= (int)fracPartLL;
 
-            fracPartLL %= prec;
-            if (fracPartLL < 0) {
-                integerPart--;
-                fracPartLL += prec;
-            }
-
-            std::string fracPart = std::to_string(fracPartLL);
+            std::string fracPart = std::to_string(fracPartLL).substr(2);
 
             result = NormalizeFloat(std::to_string(integerPart) + '.' + (fracPart.size() > 6 ? fracPart.substr(0, 7) : fracPart));
             A.clear();

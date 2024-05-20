@@ -1,3 +1,3 @@
-C:/Users/Ice Bear/Desktop/lang/Scripting/build/CMakeFiles/main.dir
-C:/Users/Ice Bear/Desktop/lang/Scripting/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Ice Bear/Desktop/lang/Scripting/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Ice Bear/Desktop/lang/Scripting/Scripting/build/CMakeFiles/main.dir
+C:/Users/Ice Bear/Desktop/lang/Scripting/Scripting/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Ice Bear/Desktop/lang/Scripting/Scripting/build/CMakeFiles/ZERO_CHECK.dir
